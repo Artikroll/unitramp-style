@@ -100,6 +100,8 @@ body.menu-open .mmenu{opacity:1;visibility:visible}
 .sticker{position:absolute;z-index:3;right:27%;top:-24px;width:130px;height:130px;border-radius:50%;background:var(--a2);color:var(--ink);display:grid;place-items:center;text-align:center;font:600 13px/1.2 var(--h);letter-spacing:-.01em;padding:18px;transform:rotate(12deg);animation:spin 18s linear infinite;transition:background .6s}
 @keyframes spin{to{transform:rotate(372deg)}}
 
+
+
 /* reveal */
 [data-r]{opacity:0;transform:translateY(26px);transition:opacity .7s var(--ease),transform .8s var(--out)}
 [data-r].in{opacity:1;transform:none}
@@ -193,6 +195,50 @@ body.menu-open .mmenu{opacity:1;visibility:visible}
 .w .cap b{font:600 15px/1.2 var(--h);letter-spacing:-.02em}
 .w .cap span{display:block;font-size:13px;color:var(--ink-2);margin-top:4px}
 .w .vis{position:absolute;left:12px;top:12px;background:var(--ink);color:#fff;font:600 11px/1 var(--b);padding:7px 10px;border-radius:999px}
+
+
+/* levels */
+.lv-grid{display:grid;grid-template-columns:1fr 1.15fr;gap:24px;align-items:stretch}
+.lv-ctl{background:var(--paper);border-radius:var(--r);padding:32px;display:flex;flex-direction:column}
+.lv-area{display:flex;gap:12px;align-items:center;margin-top:8px}
+.lv-area input{width:160px;height:56px;border-radius:16px;border:1.5px solid var(--line);background:var(--bg);padding:0 16px;font:600 20px/1 var(--h);outline:0}
+.lv-area input:focus{border-color:var(--a)}
+.lv-area span{color:var(--ink-2)}
+.lv-range{margin:28px 0 8px;-webkit-appearance:none;appearance:none;width:100%;height:8px;border-radius:4px;background:linear-gradient(90deg,var(--a) var(--p,0%),var(--bg-2) var(--p,0%));outline:0}
+.lv-range::-webkit-slider-thumb{-webkit-appearance:none;width:28px;height:28px;border-radius:50%;background:var(--ink);border:4px solid #fff;box-shadow:0 2px 8px rgba(0,0,0,.25);cursor:pointer}
+.lv-range::-moz-range-thumb{width:24px;height:24px;border-radius:50%;background:var(--ink);border:4px solid #fff;cursor:pointer}
+.lv-ticks{display:grid;grid-template-columns:repeat(8,1fr);gap:4px;margin-bottom:24px}
+.lv-ticks button{border:0;background:none;cursor:pointer;text-align:left;padding:6px 0;font:600 11px/1.2 var(--b);color:var(--ink-3);border-top:3px solid var(--bg-2);transition:color .2s,border-color .2s}
+.lv-ticks button.on,.lv-ticks button.done{border-color:var(--a)}
+.lv-ticks button.on{color:var(--ink)}
+.lv-ticks button b{display:block;font:600 13px/1 var(--h);margin-bottom:4px}
+.lv-ticks button{overflow:hidden;text-overflow:ellipsis;white-space:nowrap}
+.lv-name{font:600 28px/1.1 var(--h);letter-spacing:-.03em}
+.lv-desc{color:var(--ink-2);margin-top:10px;font-size:16px}
+.lv-price{margin-top:auto;padding-top:24px;border-top:1px solid var(--line);display:flex;justify-content:space-between;align-items:flex-end;gap:16px;flex-wrap:wrap}
+.lv-price b{font:600 44px/1 var(--h);letter-spacing:-.04em;color:var(--a);transition:color .6s}
+.lv-price span{font-size:14px;color:var(--ink-2)}
+.lv-pic{position:relative;border-radius:var(--r);overflow:hidden;background:#fff;min-height:440px}
+.lv-pic img{position:absolute;inset:0;width:100%;height:100%;object-fit:contain;background:#fff;opacity:0;transition:opacity .5s}
+.lv-pic img.on{opacity:1}
+.lv-pic .cap{position:absolute;left:14px;top:14px;background:var(--ink);color:#fff;font:600 12px/1 var(--b);padding:8px 10px;border-radius:999px;z-index:2}
+.lv-steps{display:grid;grid-template-columns:repeat(4,1fr);gap:12px;margin-top:20px}
+.lv-steps div{background:var(--paper);border-radius:20px;padding:18px}
+.lv-steps b{display:block;font:600 16px/1.2 var(--h);letter-spacing:-.02em}
+.lv-steps span{display:block;font-size:13px;color:var(--ink-3);margin-top:4px}
+.lv-steps em{font-style:normal;display:inline-block;margin-top:10px;background:var(--bg);border-radius:999px;padding:5px 10px;font:600 13px/1 var(--b)}
+/* case */
+.tt{display:grid;grid-template-columns:1.2fr 1fr 1fr;grid-auto-rows:220px;gap:12px}
+.tt figure{position:relative;border-radius:22px;overflow:hidden;background:var(--bg-2)}
+.tt figure img{width:100%;height:100%;object-fit:cover}
+.tt figure:nth-child(1){grid-row:span 2}
+.tt figcaption{position:absolute;left:12px;bottom:12px;background:rgba(255,255,255,.94);border-radius:999px;padding:7px 11px;font:600 12px/1 var(--b)}
+.tt .vis{position:absolute;left:12px;top:12px;background:var(--ink);color:#fff;font:600 11px/1 var(--b);padding:7px 10px;border-radius:999px}
+.tt-txt{background:var(--a);color:var(--a-ink);border-radius:22px;padding:24px;display:flex;flex-direction:column;justify-content:space-between;transition:background .6s,color .6s}
+.tt-txt b{font:600 26px/1.05 var(--h);letter-spacing:-.03em}
+.tt-txt p{font-size:14px;opacity:.85;margin-top:8px}
+@media (max-width:1199px){.lv-grid{grid-template-columns:1fr}.lv-steps{grid-template-columns:1fr 1fr}.tt{grid-template-columns:1fr 1fr}.tt figure:nth-child(1){grid-column:1/-1;grid-row:auto}}
+@media (max-width:767px){.lv-ctl{padding:20px}.lv-ticks button{font-size:0}.lv-ticks button b{font-size:12px}.lv-pic{min-height:300px}.lv-price b{font-size:34px}.tt{grid-template-columns:1fr;grid-auto-rows:240px}}
 
 /* faq / form */
 .faq{display:grid;grid-template-columns:1fr 1.6fr;gap:48px}
@@ -296,7 +342,7 @@ form.done .sent{opacity:1;pointer-events:auto}
   <div class="wrap">
     <a href="#top" class="logo"><img src="assets/img/logo.svg" alt="UNITRAMP"></a>
     <span class="sub">Концепция<br>и стиль парков</span>
-    <nav aria-label="Разделы"><a href="#what">Что делаем</a><a href="#lab">Темы</a><a href="#process">Процесс</a><a href="#works">Работы</a><a href="#faq">Вопросы</a></nav>
+    <nav aria-label="Разделы"><a href="#what">Что делаем</a><a href="#lab">Темы</a><a href="#levels">Цены</a><a href="#process">Процесс</a><a href="#works">Работы</a><a href="#faq">Вопросы</a></nav>
     <a href="#form" class="btn btn-k">Обсудить проект</a>
     <button class="burger" id="burger" aria-label="Меню" aria-expanded="false"><span></span><span></span></button>
   </div>
@@ -342,12 +388,12 @@ form.done .sent{opacity:1;pointer-events:auto}
   <div class="wrap">
     <div class="head">
       <div><div class="tag" data-r><i></i>Что делаем</div><h2 data-r>От идеи до оформления каждой стены</h2></div>
-      <p class="lead" data-r>Можно заказать всё вместе или начать с концепции. <span class="gap ok">состав услуг и что из этого продаётся отдельно</span></p>
+      <p class="lead" data-r>Можно заказать всё вместе или начать с концепции. Глубину проработки выбираете сами: от бабл-схемы до фирменного стиля.</p>
     </div>
     <div class="dl">
       <div class="d" data-r><div class="ic"><svg width="26" height="26" viewBox="0 0 24 24" fill="none"><circle cx="12" cy="12" r="8" stroke="#121212" stroke-width="2"/><path d="M12 4v16M4 12h16" stroke="#121212" stroke-width="2"/></svg></div><h3>Концепция и тема</h3><p>Идея парка под город и аудиторию: о чём он, для какого возраста, чем отличается от соседей.</p></div>
-      <div class="d" data-r style="transition-delay:.05s"><div class="ic"><svg width="26" height="26" viewBox="0 0 24 24" fill="none"><circle cx="12" cy="9" r="5" stroke="#121212" stroke-width="2"/><path d="M5 21c1-4 4-6 7-6s6 2 7 6" stroke="#121212" stroke-width="2"/><circle cx="10" cy="8.5" r="1" fill="#121212"/><circle cx="14" cy="8.5" r="1" fill="#121212"/></svg></div><h3>Герои парка</h3><p>Персонажи, которые живут на стенах, панелях и в соцсетях. <span class="gap ok">делаем ли персонажей с нуля</span></p></div>
-      <div class="d" data-r style="transition-delay:.1s"><div class="ic"><svg width="26" height="26" viewBox="0 0 24 24" fill="none"><path d="M4 20V4h16v16z" stroke="#121212" stroke-width="2"/><path d="M8 15l3-6 2 4 1.5-2L17 15z" stroke="#121212" stroke-width="2" stroke-linejoin="round"/></svg></div><h3>Логотип и стиль</h3><p>Знак, цвета и шрифты парка для вывески, билетов, соцсетей. <span class="gap ok">логотипы в портфолио</span></p></div>
+      <div class="d" data-r style="transition-delay:.05s"><div class="ic"><svg width="26" height="26" viewBox="0 0 24 24" fill="none"><circle cx="12" cy="9" r="5" stroke="#121212" stroke-width="2"/><path d="M5 21c1-4 4-6 7-6s6 2 7 6" stroke="#121212" stroke-width="2"/><circle cx="10" cy="8.5" r="1" fill="#121212"/><circle cx="14" cy="8.5" r="1" fill="#121212"/></svg></div><h3>Герои парка</h3><p>Персонажи, которые живут на стенах, панелях и в соцсетях, как в «ТикиТаки».</p></div>
+      <div class="d" data-r style="transition-delay:.1s"><div class="ic"><svg width="26" height="26" viewBox="0 0 24 24" fill="none"><path d="M4 20V4h16v16z" stroke="#121212" stroke-width="2"/><path d="M8 15l3-6 2 4 1.5-2L17 15z" stroke="#121212" stroke-width="2" stroke-linejoin="round"/></svg></div><h3>Логотип и стиль</h3><p>Знак, цвета и шрифты парка для вывески, билетов, соцсетей.</p></div>
       <div class="d" data-r><div class="ic"><svg width="26" height="26" viewBox="0 0 24 24" fill="none"><path d="M4 20h16M6 20V9l6-5 6 5v11" stroke="#121212" stroke-width="2"/><path d="M10 20v-5h4v5" stroke="#121212" stroke-width="2"/></svg></div><h3>Цвета оборудования</h3><p>Лабиринты, рамы и маты в цветах темы. Расцветку меняли даже на последней стадии проекта.</p></div>
       <div class="d" data-r style="transition-delay:.05s"><div class="ic"><svg width="26" height="26" viewBox="0 0 24 24" fill="none"><rect x="5" y="3" width="14" height="18" rx="3" stroke="#121212" stroke-width="2"/><path d="M9 9h6M9 13h6" stroke="#121212" stroke-width="2"/></svg></div><h3>Панели и стены</h3><p>Декоративные панели с УФ-печатью: насыщенный цвет, ровные детали. Печатаем на производстве.</p></div>
       <div class="d" data-r style="transition-delay:.1s"><div class="ic"><svg width="26" height="26" viewBox="0 0 24 24" fill="none"><path d="M3 8l9-5 9 5-9 5z" stroke="#121212" stroke-width="2" stroke-linejoin="round"/><path d="M3 8v8l9 5 9-5V8" stroke="#121212" stroke-width="2" stroke-linejoin="round"/></svg></div><h3>3D и видео-презентация</h3><p>Парк в 3D до производства и видео, которое можно показать партнёрам и инвесторам.</p></div>
@@ -378,6 +424,52 @@ form.done .sent{opacity:1;pointer-events:auto}
         <p class="note">Это быстрый эскиз в цветах темы, а не готовый логотип. Настоящий стиль разрабатываем под ваш город и аудиторию.</p>
         <a href="#form" class="btn btn-a">Хочу такой стиль</a>
       </div>
+    </div>
+  </div>
+</section>
+
+<!-- LEVELS -->
+<section class="sec" id="levels">
+  <div class="wrap">
+    <div class="head">
+      <div><div class="tag" data-r><i></i>Глубина проработки</div><h2 data-r>Выберите, насколько подробно проработать проект</h2></div>
+      <p class="lead" data-r>Восемь уровней от бабл-схемы до фирменного стиля. Первые четыре бесплатно при любой площади. Введите площадь и двигайте шкалу.</p>
+    </div>
+    <div class="lv-grid">
+      <div class="lv-ctl" data-r>
+        <label for="lvArea" style="font-size:13px;font-weight:600;color:var(--ink-2)">Площадь помещения</label>
+        <div class="lv-area"><input id="lvArea" inputmode="numeric" value="600"><span>м²</span></div>
+        <input type="range" class="lv-range" id="lvR" min="1" max="8" value="4" step="1" aria-label="Уровень проработки">
+        <div class="lv-ticks" id="lvT"></div>
+        <div class="lv-name" id="lvN"></div>
+        <ul class="lv-desc" id="lvD" style="list-style:none;display:grid;gap:6px"></ul>
+        <div class="lv-price"><div><span>Стоимость уровня</span><br><b id="lvP"></b></div><span id="lvU"></span></div>
+      </div>
+      <div class="lv-pic" id="lvPic" data-r><span class="cap" id="lvC"></span></div>
+    </div>
+    <div class="lv-steps" data-r>
+      <div><b>2D-зонирование</b><span>с обсуждением и правками</span><em>3–5 дней</em></div>
+      <div><b>3D и дизайн</b><span>оборудование и помещение</span><em>2–3 недели</em></div>
+      <div><b>Смета</b><span>после утверждения 3D</span><em>2–3 дня</em></div>
+      <div><b>Договор</b><span>и запуск производства</span><em>2–3 дня</em></div>
+    </div>
+    <p style="font-size:13px;color:var(--ink-3);margin-top:12px" data-r>Уровни, цены и сроки по материалам Кирилла Шувалова «Степень проработки проекта». Стоимость указана для выбранного уровня, уровни не суммируются. Примеры: проект «ТикиТаки», Череповец.</p>
+  </div>
+</section>
+
+<!-- TIKITAKI -->
+<section class="sec" id="case" style="padding-top:0">
+  <div class="wrap">
+    <div class="head">
+      <div><div class="tag" data-r><i></i>Кейс</div><h2 data-r>«ТикиТаки», Череповец: от мудборда до бренда на стенах</h2></div>
+      <p class="lead" data-r>Тема, персонажи, логотип и развёртки стен разработаны вместе с проектом парка, а затем построены. <span class="gap">площадь, год и срок проекта</span></p>
+    </div>
+    <div class="tt">
+      <figure data-r><img src="assets/img/tt-real.jpg" alt="Парк ТикиТаки, Череповец" loading="lazy"><figcaption>Готовый парк · кадр из обзора Романа</figcaption></figure>
+      <figure data-r><img src="assets/img/tt-mood.jpg" alt="Мудборд ТикиТаки" loading="lazy"><span class="vis">Мудборд</span></figure>
+      <figure data-r><img src="assets/img/tt-render.jpg" alt="Визуализация ТикиТаки" loading="lazy"><span class="vis">Проектная визуализация</span></figure>
+      <figure data-r><img src="assets/img/tt-brand.jpg" alt="Развёртка стены с логотипом" loading="lazy" style="object-fit:contain;background:#fff"><span class="vis">Логотип на стене</span></figure>
+      <div class="tt-txt" data-r><b>Уровень 08: детали и бренд</b><p>Логотип, персонажи, развёртки стен с размерами для производства.</p></div>
     </div>
   </div>
 </section>
@@ -440,7 +532,7 @@ form.done .sent{opacity:1;pointer-events:auto}
     <div><div class="tag" data-r><i></i>Вопросы</div><h2 data-r style="margin-top:22px">Перед стартом</h2></div>
     <div data-r>
       <details class="qa"><summary>Можно заказать только дизайн, без оборудования?<i class="pm"></i></summary><div class="a"><p><span class="gap">продаём ли концепцию отдельно и на каких условиях</span></p></div></details>
-      <details class="qa"><summary>Сколько стоит и сколько длится?<i class="pm"></i></summary><div class="a"><p>Зависит от площади и состава работ. 3D-концепцию под помещение готовим в начале проекта. <span class="gap">стоимость и срок разработки стиля</span></p></div></details>
+      <details class="qa"><summary>Сколько стоит и сколько длится?<i class="pm"></i></summary><div class="a"><p>Первые четыре уровня проработки бесплатны. Дальше от 50 до 3 500 ₽ за м² в зависимости от уровня. 2D-зонирование занимает 3–5 дней, 3D с дизайном 2–3 недели.</p></div></details>
       <details class="qa"><summary>Можно обновить стиль действующего парка?<i class="pm"></i></summary><div class="a"><p>Да. Обновляли действующие парки: MONKEY в Севастополе получил новые интерактивные зоны, в «Чудо Острове» заменили арену целиком.</p></div></details>
       <details class="qa"><summary>Чьи права на логотип и персонажей?<i class="pm"></i></summary><div class="a"><p><span class="gap">условия передачи прав</span></p></div></details>
       <details class="qa"><summary>Вы поможете с названием парка?<i class="pm"></i></summary><div class="a"><p><span class="gap ok">делаем ли нейминг</span></p></div></details>
@@ -510,6 +602,28 @@ function nm(){return inp.value.trim()}
 function upd(){var n=nm()||'Ваш парк';$('#mkName').textContent=n;$('#mkBand').textContent=n.toUpperCase()+' · 2 ЧАСА';$('#mkAv').textContent=n[0].toUpperCase();$('#mkPost').textContent=(translit(n)||'park')+'.park';$('#f-name').value=nm();setTh(cur)}
 inp.addEventListener('input',upd);
 setTh(0);upd();
+
+/* levels (Kirill Shuvalov, «Степень проработки проекта») */
+var LV=[
+ {n:'Бабл-схема',p:0,d:['Бабл-схема основных функциональных зон','Распределение направлений активности','Взаимное расположение зон'],img:'lv1.jpg'},
+ {n:'Зонирование с учётом оборудования',p:0,d:['Размещение оборудования на плане','Учёт размеров каждого элемента','Уточнение границ и взаимного расположения зон'],img:'lv2.jpg'},
+ {n:'Зонирование с учётом помещения',p:0,d:['Учёт особенностей и ограничений помещения','Учёт пожарных требований','Эвакуационные пути и проходы'],img:'lv3.jpg'},
+ {n:'Концепция и визуальный стиль',p:0,d:['Общая тематика и характер пространства','Цветовая палитра и стилистические ориентиры','Концепт-лист с привязкой идей к зонам'],img:'lv4.jpg'},
+ {n:'3D с учётом высот и ограничений',p:50,d:['Проектирование пространства в 3D','Учёт высот помещения','Учёт проблем и особенностей помещения'],img:'lv5.jpg'},
+ {n:'3D в цвете и стилистике',p:200,d:['Проработка выбранной тематики','Цветовое решение проекта','Единая дизайн-стилистика'],img:'lv6.jpg'},
+ {n:'3D всех зон',p:400,d:['3D-проработка всех зон проекта','Визуальная проработка кухни и входной зоны','Общий вид пространства в едином стиле'],img:'lv7.jpg'},
+ {n:'Детальный проект и фирменный стиль',p:3500,d:['Расположение розеток и детальная проработка декораций','Проработка и создание дизайна','Разработка фирменного стиля'],img:'lv8.jpg'}
+];
+var lvPic=$('#lvPic'),lvT=$('#lvT');
+LV.forEach(function(l,i){var im=D.createElement('img');im.src='assets/img/'+l.img;im.alt=l.n;im.loading='lazy';lvPic.appendChild(im);l.el=im;
+ var b=D.createElement('button');b.type='button';b.innerHTML='<b>0'+(i+1)+'</b>'+l.n;b.addEventListener('click',function(){$('#lvR').value=i+1;lv()});lvT.appendChild(b);l.b=b});
+function lv(){var i=+$('#lvR').value-1,l=LV[i],a=+$('#lvArea').value.replace(/\D/g,'')||0;
+ $('#lvR').style.setProperty('--p',(i/7*100)+'%');
+ LV.forEach(function(x,k){x.b.classList.toggle('on',k===i);x.b.classList.toggle('done',k<i);x.el.classList.toggle('on',k===i)});
+ $('#lvN').textContent='Уровень 0'+(i+1)+' · '+l.n;$('#lvD').innerHTML=l.d.map(function(t){return '<li>— '+t+'</li>'}).join('');
+ $('#lvP').textContent=l.p?(a*l.p).toLocaleString('ru-RU')+' ₽':'Бесплатно';$('#lvU').textContent=l.p?l.p.toLocaleString('ru-RU')+' ₽ за м²':'при любой площади';
+ $('#lvC').textContent='Пример: «ТикиТаки», уровень 0'+(i+1)}
+$('#lvR').addEventListener('input',lv);$('#lvArea').addEventListener('input',function(e){e.target.value=e.target.value.replace(/\D/g,'').slice(0,6);lv()});lv();
 
 /* reveal */
 var io=new IntersectionObserver(function(es){es.forEach(function(e){if(e.isIntersecting){e.target.classList.add('in');io.unobserve(e.target)}})},{rootMargin:'0px 0px -8% 0px',threshold:.08});
