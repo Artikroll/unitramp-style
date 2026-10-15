@@ -8,6 +8,7 @@
 <meta name="theme-color" content="#F5F2EC">
 <link rel="icon" href="assets/img/logo.svg">
 <style>
+html{overflow-x:clip}
 @font-face{font-family:"Unbounded";src:url(assets/fonts/Unbounded.ttf) format("truetype");font-weight:200 900;font-display:swap}
 @font-face{font-family:"Golos";src:url(assets/fonts/GolosText-400.ttf) format("truetype");font-weight:400;font-display:swap}
 @font-face{font-family:"Golos";src:url(assets/fonts/GolosText-500.ttf) format("truetype");font-weight:500;font-display:swap}
@@ -180,7 +181,7 @@ body.menu-open .mmenu{opacity:1;visibility:visible}
 .usp-big h2{font-size:clamp(30px,3.4vw,48px)}
 .usp-big p{font-size:18px;opacity:.88;margin-top:20px;max-width:30em}
 .usp-list{display:grid;gap:12px}
-.usp-list div{background:var(--paper);border-radius:22px;padding:24px 26px;display:grid;grid-template-columns:44px 1fr;gap:16px}
+.usp-list>div{background:var(--paper);border-radius:22px;padding:24px 26px;display:grid;grid-template-columns:44px 1fr;gap:16px}
 .usp-list b{font:600 15px/1 var(--h);color:var(--a);padding-top:4px;transition:color .6s}
 .usp-list h4{font:600 18px/1.25 var(--h);letter-spacing:-.02em}
 .usp-list p{font-size:15px;color:var(--ink-2);margin-top:6px}
@@ -462,7 +463,7 @@ form.done .sent{opacity:1;pointer-events:auto}
   <div class="wrap">
     <div class="head">
       <div><div class="tag" data-r><i></i>Кейс</div><h2 data-r>«ТикиТаки», Череповец: от мудборда до бренда на стенах</h2></div>
-      <p class="lead" data-r>Тема, персонажи, логотип и развёртки стен разработаны вместе с проектом парка, а затем построены. <span class="gap">площадь, год и срок проекта</span></p>
+      <p class="lead" data-r>Тема, персонажи, логотип и развёртки стен разработаны вместе с проектом парка, а затем построены.</p>
     </div>
     <div class="tt">
       <figure data-r><img src="assets/img/tt-real.jpg" alt="Парк ТикиТаки, Череповец" loading="lazy"><figcaption>Готовый парк · кадр из обзора Романа</figcaption></figure>
@@ -512,7 +513,7 @@ form.done .sent{opacity:1;pointer-events:auto}
   <div class="wrap">
     <div class="head">
       <div><div class="tag" data-r><i></i>Работы</div><h2 data-r>Темы, которые мы уже построили</h2></div>
-      <p class="lead" data-r>Данные со страниц проектов на unitramp.ru. <span class="gap">какие логотипы и персонажи разрабатывала наша команда</span></p>
+      <p class="lead" data-r>Данные со страниц проектов на unitramp.ru.</p>
     </div>
     <div class="works">
       <a class="w" data-r href="https://unitramp.ru/detskie-razvlekatelnye-centry/razvlekatelnyj-centr-kosmopark-1" target="_blank" rel="noopener"><img src="assets/img/kp-wall.jpg" alt="Космопарк № 1" loading="lazy"><div class="cap"><b>«Космопарк № 1»</b><span>Волгодонск, 2025 · 210 м² · лабиринт «Ракета»</span></div></a>
@@ -534,8 +535,6 @@ form.done .sent{opacity:1;pointer-events:auto}
       <details class="qa"><summary>Можно заказать только дизайн, без оборудования?<i class="pm"></i></summary><div class="a"><p><span class="gap">продаём ли концепцию отдельно и на каких условиях</span></p></div></details>
       <details class="qa"><summary>Сколько стоит и сколько длится?<i class="pm"></i></summary><div class="a"><p>Первые четыре уровня проработки бесплатны. Дальше от 50 до 3 500 ₽ за м² в зависимости от уровня. 2D-зонирование занимает 3–5 дней, 3D с дизайном 2–3 недели.</p></div></details>
       <details class="qa"><summary>Можно обновить стиль действующего парка?<i class="pm"></i></summary><div class="a"><p>Да. Обновляли действующие парки: MONKEY в Севастополе получил новые интерактивные зоны, в «Чудо Острове» заменили арену целиком.</p></div></details>
-      <details class="qa"><summary>Чьи права на логотип и персонажей?<i class="pm"></i></summary><div class="a"><p><span class="gap">условия передачи прав</span></p></div></details>
-      <details class="qa"><summary>Вы поможете с названием парка?<i class="pm"></i></summary><div class="a"><p><span class="gap ok">делаем ли нейминг</span></p></div></details>
     </div>
   </div>
 </section>
@@ -580,7 +579,7 @@ addEventListener('load',function(){D.body.classList.add('loaded')});setTimeout(f
 /* themes: examples from unitramp.ru project pages */
 var TH=[
  {k:'Космос',c1:'#5B3DF5',c2:'#FFC93C',ink:'#fff',img:'kp-wall.jpg',cs:'«Космопарк № 1», Волгодонск · лабиринт «Ракета»',m:['планеты','ракеты','звёздное небо','исследователи','неон']},
- {k:'Киберпанк',c1:'#FF2E88',c2:'#19E3FF',ink:'#fff',img:'s-atl.jpg',cs:'«Атлантика», Мурманск · арена из 40 батутов',m:['неон','ночной город','подсветка','скорость','подростки']},
+ {k:'Киберпанк',c1:'#FF2E88',c2:'#19E3FF',ink:'#fff',img:'s-neon.jpg',cs:'Интерактивный пол Infinity · неон, свет и музыка',m:['неон','ночной город','подсветка','скорость','подростки']},
  {k:'Город будущего',c1:'#14B8A6',c2:'#A78BFA',ink:'#fff',img:'c-neopolis.jpg',cs:'«Неополис», Чита · колонны стали частью игры',m:['футуризм','чистые формы','маршрут','технологии','семья']},
  {k:'Супергерои',c1:'#FFD400',c2:'#E53935',ink:'#121212',img:'hc-comic.jpg',cs:'Hero Club, Сергиев Посад · комикс на стенах',m:['комикс','подвиг','испытания','рейтинг','команда']},
  {k:'Индустриальный спорт',c1:'#E5262B',c2:'#2B2B2B',ink:'#fff',img:'c-armirum.jpg',cs:'«Армирум», Омск · зал OCR',m:['металл','сила','вызов','рекорды','взрослые']}
